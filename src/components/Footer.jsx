@@ -4,6 +4,7 @@ import {AiFillYoutube} from 'react-icons/ai';
 import {AiFillFacebook} from 'react-icons/ai';
 import {AiFillInstagram} from 'react-icons/ai';
 import {AiOutlineTwitter} from 'react-icons/ai';
+import Apps from '../assets/Apps.png';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -25,23 +26,32 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      alignItems: "center",
+      alignItems: "flex-start",
 
     },
   },
   icons:{
-    gap:"2em",
-    "& > span":{
-        border:"0.5px solid black",
-        margin:"0 auto",
+    width:"100%",
+    display:"flex",
+    gap:"10px",
+    justifyContent:"flex-start",
+    padding:"1em 0",
+    "& > div":{
+        width:"35px",
+        height:"35px",
+        display:"grid",
+        placeContent:"center",
         fontSize:"20px",
-        border:"none",
         background:theme.palette.secondary.main,
         color:theme.palette.primary.main,
-        padding:"2px",
-        backgroundPosition:"transform(50%,50%)",
         borderRadius:"5px",
     },
+  },
+  fifth:{
+    display:"flex",
+    flexDirection:"column",
+    alignItems:"center",
+    justifyContent:"flex-start",
   },
   footerSecond: {
     marginTop: "auto",
@@ -73,10 +83,10 @@ const Footer = () => {
             exercitationem rerum.
           </p>
           <div className={classes.icons}>
-            <span><AiFillYoutube/></span>&nbsp;&nbsp;&nbsp;
-            <span><AiFillFacebook/></span>&nbsp;&nbsp;&nbsp;
-            <span><AiOutlineTwitter/></span>&nbsp;&nbsp;&nbsp;
-            <span><AiFillInstagram/></span> 
+            <div><AiFillYoutube/></div>
+            <div><AiFillFacebook/></div>
+            <div><AiOutlineTwitter/></div>
+            <div><AiFillInstagram/></div> 
           </div>
         </div>
         <div className={classes.second}>
@@ -100,8 +110,7 @@ const Footer = () => {
         </div>
         <div className={classes.fifth}>
           <h3>Our App</h3>
-          <p>Apple Store</p>
-          <p>Google Play</p>
+          <img src={Apps} alt="" width="120px"/>
         </div>
       </div>
       <div className={classes.footerSecond}>
